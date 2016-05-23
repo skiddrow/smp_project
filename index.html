@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>S Notes</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Style.css">
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<script type="text/javascript" src="JS.js"></script>
+</head>
+<body onload="CheckForAuthorization()">
+	<img id="logo" src="Images/logo.png">
+	<div id="fieldsLogin">
+		<input type="login" id="login" placeholder="Введіть логін">
+		<input type="password" id="password" placeholder="Введіть пароль">
+		<span id="error"></span>
+		<button id="loginbtn" onclick="LogIn()">Увійти</button>
+		<button id="signupbtn" onclick="location.href='Registration.html'">Зареєструватися</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>S Notes</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Notes_style.css">
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel='stylesheet' href='BS/bootstrap.min.css' type='text/css' media='all'>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="JS_notes.js"></script>
+</head>
+<body onload="DisplayNotes()">
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-header">
+			<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+        	<ul class="nav navbar-nav">
+           		<li class="active"><a href="#" >S Notes</a></li>
+          		<li data-toggle = "modal" data-target = "#createForm"><a href="#">Додати нотатку</a></li>
+           		<li onclick="Logout()"><a href="#" id="exit">Вийти</a></li>
+        	</ul>
+        	<ul class="nav navbar-nav navbar-right">
+        		<li><a id="whois">Привіт, </a></li>
+        	</ul>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="createForm" tabindex="-1" role="dialog">
+    	<div class="modal-dialog">
+      		<div class="modal-content">
+        		<div class="modal-header">
+          			<button class="close" data-dismiss = "modal">X</button>
+          			<h2 class="modal-title text-center" id="titleOfForm">Додати нотатку</h2>
+        		</div>
+        		<div class="modal-body">
+          			<input type="text" id="noteTitleForm" class="form-control input-lg" maxlength="19" placeholder = "Введіть заголовок нотатки">
+          			<textarea class="form-control input-lg" id="noteDescriptionForm" maxlength = "1000" placeholder = "Введіть текст нотатки"></textarea>
+          			<p id = "error"></p>
+        		</div>
+        		<div class="modal-footer">
+          			<button class="btn btn-warning btn-lg" id="createNoteBtn" onclick="AddNote()">Додати</button>
+        		</div>
+      		</div>
+    	</div>
+  	</div>
+
+  	<div class="modal fade" id="editForm" tabindex="-1" role="dialog">
+    	<div class="modal-dialog">
+      		<div class="modal-content">
+        		<div class="modal-header">
+          			<button class="close" data-dismiss = "modal">X</button>
+          			<h2 class="modal-title text-center" id="titleOfForm">Редагувати нотатку</h2>
+        		</div>
+        		<div class="modal-body">
+          			<input type="text" id="noteTitleEdit" class="form-control input-lg" maxlength="19" placeholder = "Введіть заголовок нотатки">
+          			<textarea class="form-control input-lg" id="noteDescriptionEdit" maxlength = "1000" placeholder = "Введіть текст нотатки"></textarea>
+          			<p id = "errorEdit"></p>
+        		</div>
+        		<div class="modal-footer">
+          			<button class="btn btn-warning btn-lg" id="editNoteBtn" onclick="EditNote()">Змінити</button>
+        		</div>
+      		</div>
+    	</div>
+  	</div>
+
+  	<div id="AllNotes"></div>
+</body>
+</html>

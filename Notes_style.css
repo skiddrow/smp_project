@@ -1,0 +1,65 @@
+body {
+	background-image: url(Images/bgNotes.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#whois {
+	margin-right: 20px;
+	cursor: default;
+}
+
+#noteTitleForm, #noteTitleEdit {
+	margin-bottom: 5px;
+}
+
+#noteDescriptionForm, #noteDescriptionEdit {
+	resize: none;
+}
+
+#createNoteBtn, #editNoteBtn {
+	margin: 0 auto;
+	display: block;
+	width: 200px;
+}
+
+#error, #errorEdit {
+	font-size: 120%;
+	font-style: italic;
+	color: darkred;
+	font-weight: bold;
+}
+
+#AllNotes {
+	margin-top: 60px;
+	margin-left: 20px;
+	height: auto;
+}
+
+#note {
+	float: left;
+	margin: 25px;
+	width: 280px;
+	height: 195px;
+}
+
+#noteTitle {
+	word-wrap: break-word;
+	width: 280px;
+	height: 50px;
+	line-height: 30px;
+	cursor: default;
+	background-color: #CDAA7D;
+	color: #8B4726;
+}
+
+#noteDescription {
+	position: relative;
+	resize: none;
+	border: 0;
+	width: 280px;
+	height: 150px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	top: -10px;
+}
