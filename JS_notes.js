@@ -2,7 +2,7 @@ function CheckForAuthorization() {
 	var req = new XMLHttpRequest();
 	if(req) {
 		req.onreadystatechange = function() {
-			if(req.readyState == 4) {  // если запрос закончил выполняться 
+			if(req.readyState == 4) {
 				if(req.status == 200) {
 					if(req.responseText == "error") {
 						location.replace("index.html");
@@ -15,9 +15,9 @@ function CheckForAuthorization() {
 			}	
 		}
 
-		req.open("POST", 'Customers.php', true);  // задать адрес подключения
+		req.open("POST", 'Customers.php', true);  
 		req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		req.send("for=checkauth"); // отослать запрос
+		req.send("for=checkauth"); 
 	}
 	else {
 		alert("Браузер не підтримує технологію AJAX");
@@ -90,7 +90,7 @@ function EditNote() {
 		req.open("POST", 'Notes_script.php', true)
 		req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		var params = "title=" + document.getElementById('noteTitleEdit').value + "&editingNoteTitle=" + editingNoteTitle + "&description=" + document.getElementById('noteDescriptionEdit').value + "&editingNoteDescr=" + editingNoteDescr + "&for=editnote";
-		req.send(params); // отослать запрос
+		req.send(params); 
 	}
 	else {
 		alert("Браузер не підтримує технологію AJAX");
@@ -105,7 +105,7 @@ function DisplayNotes() {
 
 	if(req) {
 		req.onreadystatechange = function() {
-			if(req.readyState == 4) {  // если запрос закончил выполняться 
+			if(req.readyState == 4) {  
 				if(req.status == 200) {
 					var json = req.responseText;
 					var allNotes = JSON.parse(json);
@@ -117,9 +117,9 @@ function DisplayNotes() {
 			}	
 		}
 
-		req.open("POST", 'Notes_script.php', true)  // задать адрес подключения
+		req.open("POST", 'Notes_script.php', true) 
 		req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		req.send("for=displaynotes"); // отослать запрос
+		req.send("for=displaynotes"); 
 	}
 	else {
 		alert("Браузер не підтримує технологію AJAX");
@@ -184,12 +184,12 @@ function Add (title, description) {
 
 
 function Logout() {
-	var req = new XMLHttpRequest(); // создать объект для запроса к серверу
+	var req = new XMLHttpRequest();
 
 	if(req) {	
-		req.open("POST", 'Customers.php', true)  // задать адрес подключения
+		req.open("POST", 'Customers.php', true)  
 		req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		req.send("for=logout"); // отослать запрос
+		req.send("for=logout"); 
 	}
 	else {
 		alert("Браузер не підтримує технологію AJAX");
